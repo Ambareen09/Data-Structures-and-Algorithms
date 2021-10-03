@@ -7,7 +7,7 @@ the maintainers of this repository before making a pull request.
 
 1. Choose your question, and get ready with your answer in cpp.
 2. Check if the question is already present in the repository or not. Only if it not present, your contribution will get accepted.
-3. Go to the specific directory, create a new file, and start writing your code. (Check Template.md)
+3. Go to the specific directory, create a new file, and start writing your code along with the question.
 4. Submit your code, and issue the PR.
 
 ## Issue Process
