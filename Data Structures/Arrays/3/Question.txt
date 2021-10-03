@@ -1,0 +1,31 @@
+Given two matrices, the task to multiply them. Matrices can either be square or rectangular.
+
+Examples: 
+
+(Square Matrix Multiplication)
+Input : mat1[][] = {
+             {1, 1},
+            {2, 2}
+        }
+        mat2[][] = {
+            {1, 1},
+            {2, 2}
+        }
+Output : {
+             {3, 3},
+              {6, 6}
+         }
+
+(Rectangular Matrix Multiplication)
+Input : mat1[][] = {
+             {1, 1},
+            {2, 2}
+          }
+        mat2[][] = {
+            {1, 1, 1},
+            {2, 2, 2}
+           }
+Output : {
+             {3, 3, 3},
+              {6, 6, 6}
+           }
