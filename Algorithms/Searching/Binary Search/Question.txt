@@ -1,0 +1,11 @@
+Given an unsorted array, sort it in ascending order
+
+Sample Input:
+A[] = {1,5,89,43,67}
+
+Sample Output:
+{1,5,43,67,89}
+
+Time complexity
+
+O(logn)
