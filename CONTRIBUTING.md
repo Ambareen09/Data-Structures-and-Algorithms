@@ -3,6 +3,12 @@
 When contributing to this repository, please first discuss the change you wish to make via an issue with 
 the maintainers of this repository before making a pull request. 
 
+## How to contribute to this repository
+
+1. Choose your question, and get ready with your answer in cpp.
+2. Check if the question is already present in the repository or not. Only if it not present, your contribution will get accepted.
+3. Submit your code, and issue the PR.
+
 ## Issue Process
 
 1. Check if issue already exists.
