@@ -1,10 +1,10 @@
-Given an unsorted array, sort it in ascending order
+Given a sorted array, find the given value x
 
 Sample Input:
-A[] = {1,5,89,43,67}
-
+arr[] = { 2, 3, 4, 10, 40 }
+x = 10
 Sample Output:
-{1,5,43,67,89}
+Element is present in array
 
 Time complexity
 
