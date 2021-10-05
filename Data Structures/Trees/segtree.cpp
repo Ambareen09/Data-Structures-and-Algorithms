@@ -4,27 +4,19 @@ using namespace std;
 #define END '\n'
 #define int long long
 
-struct node{
-	int m, c;
-	node(){
-		m = 2e9;
-		c = 0;
-	}
-};
+//Minimum Segment Tree
 struct SegTree{
 	int size;
-	vector<node> f;
-	node init;
+	vector<int> f;
 	void initialize(int n){
 		size = 1;
 		while(size < n)
 			size *= 2;
-		f.assign(2 * size, init);
+		f.assign(2 * size, 2e9);
 	}
 	void set(int i, int v, int x, int lx, int rx){
 		if(rx - lx == 1){
-			f[x].m = v;
-			f[x].c = 1;
+			f[x] = v;
 			return;
 		}
 		int m = (lx + rx)/2;
@@ -32,40 +24,18 @@ struct SegTree{
 			set(i, v, 2 * x + 1, lx, m);
 		else
 			set(i, v, 2 * x + 2, m, rx);
-		//f[x] = min(f[2 * x + 1], f[2 * x + 2]);
-		if(f[2 * x + 1].m < f[2 * x + 2].m){
-			f[x] = f[2 * x + 1];
-		}
-		else if(f[2 * x + 1].m > f[2 * x + 2].m){
-			f[x] = f[2 * x + 2];
-		}
-		else{
-			f[x].m = f[2 * x + 1].m;
-			f[x].c = f[2 * x + 1].c + f[2 * x + 2].c;
-		}
-
+		f[x] = min(f[2 * x + 1], f[2 * x + 2]);
 	}
 	void set(int i, int v){
 		set(i, v, 0, 0, size);
 	}
-	node mn(int l, int r, int x, int lx, int rx){
+	int mn(int l, int r, int x, int lx, int rx){
 		if(lx >= r|| l >= rx) return init;
 		else if(lx >= l && rx <= r) return f[x];
 		int m = (lx + rx)/2;
-		node A = mn(l, r, 2 * x + 1, lx, m);
-		node B = mn(l, r, 2 * x + 2, m, rx);
-		node C = init;
-		if(A.m < B.m)
-			C = A;
-		else if(A.m == B.m){
-			C.m = A.m;
-			C.c = A.c + B.c;
-		}
-		else
-			C = B;
-		return C;
+		return min(mn(l, r, 2 * x + 1], lx, m), mn(l, r, 2 * x + 2, m, rx));
 	}
-	node mn(int l, int r){
+	int mn(int l, int r){
 		return mn(l, r, 0, 0, size);
 	}
 };
@@ -83,15 +53,16 @@ void solve(){
 		int type;
 		cin>>type;
 		if(type == 1){
+			//Set the ith index to v
 			int i, v;
 			cin>>i>>v;
 			st.set(i, v);
 		}
 		else{
+			//Find the minimum in the range [l, r)
 			int l, r;
 			cin>>l>>r;
-			node ans = st.mn(l, r);
-			cout<<ans.m<<" "<<ans.c<<END;
+			cout<<st.get(l, r)<<END;
 		}
 	}
 }
