@@ -33,7 +33,7 @@ struct SegTree{
 		if(lx >= r|| l >= rx) return init;
 		else if(lx >= l && rx <= r) return f[x];
 		int m = (lx + rx)/2;
-		return min(mn(l, r, 2 * x + 1], lx, m), mn(l, r, 2 * x + 2, m, rx));
+		return min(mn(l, r, 2 * x + 1, lx, m), mn(l, r, 2 * x + 2, m, rx));
 	}
 	int mn(int l, int r){
 		return mn(l, r, 0, 0, size);
