@@ -1,0 +1,17 @@
+Merge Sort is one of the most popular sorting algorithms that is based on the principle of Divide and Conquer Algorithm.
+
+Given an unsorted array, sort the array in ascending order using merge sort
+
+Sample Input:
+ int arr[] = {6, 5, 12, 10, 9, 1};
+
+Sample Output:
+ 1,5,6,9,10,12
+
+Merge Sort Complexity
+Time Complexity	 
+Best	O(n*log n)
+Worst	O(n*log n)
+Average	O(n*log n)
+Space Complexity	O(n)
+Stability	Yes
